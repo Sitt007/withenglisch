@@ -1,0 +1,344 @@
+body{
+    
+    background-color: rgb(234, 237, 239);
+    margin: 0px;
+   
+}
+content{
+    height: calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+/*The whole menu-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+nav{
+    background-color:rgb(234, 237, 239) ;
+    display: flex;
+    justify-content: space-between;
+    margin:0px;
+    padding:10px;
+    z-index: 1000;
+    position: relative;
+    
+}
+.titlediv{
+    align-items: center;
+}
+h1{
+    margin:0px;
+    font-size: 40px;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    flex-shrink: 5;
+    color: rgb(3,145,2);
+}
+.untertitle{
+    font-family: "DM Serif Text", serif;
+}
+
+.menubutton{
+    font-family: "DM Serif Text", serif;
+    font-size: 30px;
+    border:none;
+    background-color: rgb(234, 237, 239) ;
+    margin-top: 5px;
+    padding:10px;
+    transition: transform 0.15s ease;
+    
+}
+.menubutton:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+}
+.englishbutton{
+    font-family: "DM Serif Text", serif;
+    font-size: 30px;
+    border:none;
+    background-color: rgb(234, 237, 239) ;
+    margin-top: 5px;
+    padding:10px;
+    color:rgb(3,145,2);
+    transition: transform 0.15s ease;
+    
+}
+.englishbutton:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    transform: scale(1.08);
+}
+.homebutton{
+    text-decoration: underline;
+    font-family: "DM Serif Text", serif;
+    font-size: 30px;
+    border:none;
+    background-color: rgb(234, 237, 239) ;
+    margin-top: 5px;
+    transition: transform 0.15s ease;
+}
+.homebutton:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+}
+.untertitle{
+    font-size: 20px;
+    margin-top:5px;
+    margin-bottom: 0px;
+}
+.burgermenuicon{
+    width: 70px;
+}
+burgermenu{
+    display: none;
+}
+.menuicon{
+    width: 35px;
+    margin-top: 15px;
+    margin-right: 10px;
+    transition: transform 0.15s ease;
+}
+.menuicon:hover{
+    transform: scale(1.08);
+}
+.menubuttons{
+    display: flex;
+    align-items: center;
+}
+.menuiconburger{
+    height: 35px;
+    transition: transform 0.15s ease;
+    margin-top: 19px;
+}
+@media(max-width:430px){
+    h1{
+        font-size: 30px;
+    }
+}
+/* The image main image style---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.mainimage{
+    max-width: 100%; /* Ensures image doesn't overflow horizontally */
+    max-height: 100%; /* Ensures image doesn't overflow vertically */
+    object-fit: contain; /* Maintains aspect ratio */
+    
+}
+.mainimagediv{
+    flex-grow: 1; /* This ensures the image container takes up the remaining space */
+    display: flex; /* Make this a flex container */
+    justify-content: center; /* Centers image horizontally */
+    align-items: center; /* Centers image vertically */
+    width: 100%; /* Ensure it takes up full width */
+}
+/*Der Abspann----------------------------------------------------------------------------------------------------------------------*/
+.abspann{
+    display: flex;
+    justify-content:space-around;
+    align-self: flex-end;
+    margin-top: auto;
+    width: 100%;
+}
+.abspannbutton{
+    font-family: "DM Serif Text", serif;
+    font-size: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border:none;
+    text-decoration: underline;
+}
+.abspannbutton:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  background-color: inherit;
+}
+.copyright{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/*Some other stuff----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+hr{
+    margin: 0;
+    height: 3px; 
+    background-color: black;
+    border: none;
+    
+    
+}
+
+.spacer{
+    border:15px, solid rgb(213, 215, 217);
+    border-radius: 5px;
+}
+
+/*The burger menu--------------------------------------------------------------------------------------------------------------------------------------------*/
+#menu__toggle:checked ~ .menu__btn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+  }
+  #menu__toggle {
+    opacity: 0;
+  }
+  
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    right: 0;
+    left: auto;
+  }
+  
+  .menu__btn {
+    display: flex;
+    align-items: center;
+    top: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+  }
+  
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+  
+    width: 100%;
+    height: 3px;
+  
+    background-color: black;
+  
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -10px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 10px;
+  }
+  
+  .menu__box {
+    left: auto; /* Ensure left is not applied */
+    right: -100%; /* Position the menu box off the screen to the right */
+    
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    
+    width: 100%;
+    height: 100%;
+  
+    margin: 0;
+    
+  
+    list-style: none;
+  
+    background-color: rgb(213, 215, 217);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  
+    transition-duration: .15s;
+  
+    z-index: 1;
+  }
+  
+  .menu__item {
+    font-family: "DM Serif Text", serif;
+    font-size: 30px;
+    border:none;
+    background-color: rgb(234, 237, 239) ;
+    margin-top: 5px;
+    padding:10px;
+    background: transparent;
+    color:black;
+    text-decoration: none;
+    text-align: center; 
+    width: 100%;
+    display: block;
+  }
+  .menu__item:hover {
+    cursor: pointer;
+    
+  }
+  .menu__itemdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+  }
+  .menu__item__home{
+    font-family: "DM Serif Text", serif;
+    font-size: 30px;
+    border:none;
+    background-color: rgb(234, 237, 239) ;
+    margin-top: 5px;
+    padding:10px;
+    background: transparent;
+    color:black;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    text-decoration: underline;
+  }
+  
+  .hamburger-menu{
+    display: none;
+  }
+  .menu__item__englisch{
+    font-family: "DM Serif Text", serif;
+    font-size: 30px;
+    border:none;
+    background-color: rgb(234, 237, 239) ;
+    margin-top: 5px;
+    padding:10px;
+    background: transparent;
+    color:rgb(3,145,2);
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    
+  }
+  
+  
+  
+  
+  
+  @media(max-width:980px){
+    .menubuttons {
+        display: none;
+    }
+  
+    burgermenu {
+        display: block;
+    }
+  
+    .mitglidertexthome {
+        display: none;
+    }
+  
+    .burgermenuicon {
+        display: block;
+    }
+    .hamburger-menu{
+        display: block;
+    }
+    .menu__btn{
+        position: block;
+        top:30px;
+        right: 30px;
+    }
+  }
